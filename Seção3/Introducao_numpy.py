@@ -121,16 +121,38 @@ print(c[1,1,1]) #Acessando o elemento do segundo bloco, segunda linha e segunda 
 # o método dot() do Numpy é usado para calcular o produto escalar (ou produto interno) de dois arrays.
 #inner(a,b) e outer(a,b) são funções do Numpy que calculam o produto interno e o produto externo de 
 # dois arrays, respectivamente.
-
-"""
-
-# Autovalor e Autovetor
+# Autovalor e Autovetor com sympy
 import sympy as sp
 lamb = sp.symbols('lambda')
-A = sp.Matrix([[5,3,-1]
-    [1,2,1]
-    [2,-1,3]])
+A = sp.Matrix([[5,3,-1],
+    [1,2,1],
+    [2,-1,3]
+    ])
 # Calculando os autovalores e autovetores da matriz A
 eq = (A - lamb*sp.eye(3)*lamb).det()  # Calcula o determinante de (A - λI)
 
 print("Equação característica:", eq)
+A = np.array([[5, 3, -1],
+              [1, 2, 1],
+              [2, -1, 3]])  
+
+print("Matriz A:")
+print(A)
+
+l,v= np.linalg.eig(A)  # Calcula os autovalores e autovetores da matriz A
+print("Autovalores:")
+print(l)
+print("Autovetores:")
+print(v)
+#linalg.solve() é uma função do Numpy que resolve sistemas de equações lineares da forma Ax = B, onde A é uma matriz de 
+# coeficientes e B é um vetor de constantes.
+import numpy as np
+A = np.array([[5, 3, -1], [1, 2, 1], [2, -1, 3]])
+# Calculando os autovalores e autovetores da matriz A
+B = np.array([[9, 11, 6]])
+
+np.linalg.solve(A, B.T)  # Resolvendo o sistema de equações Ax = B
+print("Solução do sistema de equações Ax = B:")
+print(np.linalg.solve(A, B.T))
+"""
+
