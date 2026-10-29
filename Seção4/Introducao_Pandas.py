@@ -52,4 +52,4 @@ nba = pd.read_csv(file)
 #razao = nba['height'].mean() / nba['weight'].mean()
 #print(razao)
 print(nba.columns)
-print(nba.sort_values(by='height')) #sort_values ordena os valores de uma coluna do dataframe
+print(nba.sort_values(by='height')) #sort_values ordena os valores de uma coluna do dataframesudo ap
